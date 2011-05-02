@@ -1,0 +1,13 @@
+#DiskShadow script file
+
+set context persistent nowriters
+set verbose on
+begin backup
+add volume c: alias SystemVolumeShadow
+create
+expose %SystemVolumeShadow% b:
+exec ___hMailServer_backup.cmd
+unexpose b:
+end backup
+
+#End of script
