@@ -1,4 +1,4 @@
   * automatically create C:\Backup if it doesn't exist
   * better names for scripts
   * backup real Database instead of the integrated one
-  * better date format independent of current date format
+  * ~~better date format independent of current date format~~ v0.2
