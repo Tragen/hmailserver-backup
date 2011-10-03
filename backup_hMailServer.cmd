@@ -9,10 +9,12 @@ set PRETTY_DATE=%CURRENT_DATE:~-4%-%CURRENT_DATE:~3,2%-%CURRENT_DATE:~0,2%
 ::Pretty date format yyyy-mm-dd. Works for date format dd.mm.yyyy
 
 set TMPVBSWD=%TEMP%\_TMP$.VBS
-echo WScript.Echo WeekDay( Date, vbMonday ) >%TMPVBSWD%
+echo SetLocale("en-us") >%TMPVBSWD%
+echo WScript.Echo WeekDay( Date, vbMonday ) >>%TMPVBSWD%
 for /F %%? in ('CSCRIPT //NOLOGO %TMPVBSWD%') do set WEEKDAY=%%?
 del %TMPVBSWD%
-echo WScript.Echo WeekDayName( WeekDay( Date, vbMonday ), False, vbMonday ) >%TMPVBSWD%
+echo SetLocale("en-us") >%TMPVBSWD%
+echo WScript.Echo WeekDayName( WeekDay( Date, vbMonday ), False, vbMonday ) >>%TMPVBSWD%
 for /F %%? in ('CSCRIPT //NOLOGO %TMPVBSWD%') do set WEEKDAYNAME=%%?
 del %TMPVBSWD%
 
