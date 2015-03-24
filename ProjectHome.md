@@ -1,0 +1,1 @@
+Command line backup of hMailServer with only a short interrupt if you use the integrated MSSQL/MySQL database and no interrupt if you use real MS SQL Server
